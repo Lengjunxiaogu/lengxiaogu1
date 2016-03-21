@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>任务五</title>
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+
+}
+.head{
+width:100%;
+height:60px;
+background-color:#333;	
+overflow:hidden;
+}
+.head_imag{
+float:left;	
+height:60px;
+margin-left:30px;
+margin-top:-2px;
+}
+.head_nav{
+float:right;
+width:400px;	
+}
+.head_nav li{
+float:left;
+width:100px;
+line-height:60px;
+}
+.head_nav a{
+color:white;
+text-decoration:none;
+font-size:12px;	
+}
+.head_nav a:hover, .head_nav a:visited{
+color:#7F9098;
+}
+.body{
+width:100%;
+background:#DEDEDE;
+overflow:hidden;	
+}
+.body_left{
+height:100%;
+margin:20px 380px 0 20px;
+overflow:hidden;
+}
+.body_right{
+float:right;
+width:360px;
+margin:20px;
+border:1px solid #999;
+background:white;	
+}
+.body_right .side_bar{
+margin:20px;	
+}
+.submit_inf{
+font-size:12px;
+margin:20px;
+width:340px;
+margin:10px;
+}
+.submit_inf tr{
+height:	30px;
+}
+.table_left{
+width:100px;
+text-align:right;
+line-height:30px;
+}
+.table_right{
+padding-left:10px;
+}
+.p_color{
+color:#938CAE;
+padding-bottom:10px;	
+}
+.submit{
+width:340px;
+height:30px;
+margin:0 0 20px 10px;
+background-color:#3355D0;
+color:white;
+text-align:center;
+}
+.article1{
+padding:20px 10px;
+border:1px solid #999;
+background:white;
+margin-bottom:20px;
+font-size:12px;	
+line-height:20px;
+}
+.article1 li{
+list-style-type:none;
+padding-left:30px;	
+}
+.picture{
+width:100px;
+text-align:center;
+border:1px solid #999;
+display:inline-block;
+margin:10px;
+}
+.footer{
+width:100%;
+height:145px;
+background:#000;
+text-align:center;
+line-height:145px;
+color:white;
+}
+</style>
+</head>
+
+<body>
+<div class="head">
+	<div class="head_imag">
+    	<img src="baidu_logo.png" alt="logo" />
+    </div>
+    <div class="head_nav">
+    	<ul>
+        	<li><a href="#">导航链接一</a></li>
+            <li><a href="#">导航链接二</a></li>
+            <li><a href="#">导航链接三</a></li>
+            <li><a href="#">导航链接四</a></li>
+        </ul>
+    </div>   
+</div>
+<div class="body">
+	<div class="body_right">
+    	<div class="side_bar">
+        	<h5>这里以后是一个侧栏，这是侧栏的标题</h5>
+        </div>
+        <table class="submit_inf">
+        	<tr>
+            	<td class="table_left">请输入邮箱地址</td>
+                <td class="table_right">
+                	<input type="text" value="这是一个文本输入框" />          
+                </td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td class="table_right p_color"><p> 邮箱地址请按要求格式输入</p></td>
+            </tr>
+            <tr>
+            	<td class="table_left">请输入密码</td>
+                <td class="table_right"><input type="password"  /></td>
+            </tr>
+            <tr>
+            	<td class="table_left">请重复输入密码</td>
+                <td class="table_right">
+                	<input type="password"  />                   
+                </td>               
+            </tr>
+             <tr>
+            	<td class="table_left"></td>
+                <td class="table_right p_color"><p>密码请为6-16位英文数字</p></td>
+            </tr>
+            <tr>
+            	<td class="table_left">性别</td>
+                <td class="table_right">
+                	<input type="radio" name="sex" />男
+                    <input type="radio" name="sex" />女
+                </td>
+            </tr>
+            <tr>
+            	<td class="table_left">城市</td>
+                <td class="table_right">
+                    <select>
+                        <option value="1">北京</option>
+                        <option value="2">上海</option>
+                        <option value="3">深圳</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+               <td class="table_left">爱好</td>
+               <td class="table_right">
+                  <input type="checkbox" value="intrest"  />运动
+                  <input type="checkbox" value="intrest"  />艺术
+                  <input type="checkbox" value="intrest"  />科学
+               </td>
+            </tr>
+            <tr>
+            	<td class="table_left">个人描述</td>
+                <td class="table_right">
+                	<textarea name="text" cols="30" rows="5" >这是一个多行输入框，输入您的个人描述</textarea>
+                </td>
+            </tr>
+        </table>
+        <input class="submit" type="submit" value="确认提交"  />
+        
+    </div>
+    <div class="body_left">
+    	<div class="article1">
+        	<h1>文章一级标题</h1>
+            <h2>文章二级标题</h2>
+            <h6>文章作者 文章发表时间</h6>
+            <p>这是一个很撑的段落，这是一个很撑的段落，落，这是一个很撑的段落，落，这是一个很撑的段落，
+            落，这是一个很撑的段落，落，这是一个很撑的段落，落，这是一个很撑的段落，落，这是一个很撑的段落，
+            落，这是一个很撑的段落，<br/>落，这是一个很撑的段落，落，这是一个很撑的段落,落，这是一个很撑的段落，
+            落，这是一个很撑的段落，<a href="http://ife.baidu.com">这里是一个链接链接到http://ife.baidu.com</a>
+            这是一个很撑的段落，这是一个很撑的段落，这是一个很撑的段落，这是一个很撑的段落，这是一个很撑的段落。</p>
+            <img src="book1.jpg" alt="book1" />
+            <p>这是一个很撑的段落，这是一个很撑的段落，落，这是一个很撑的段落，落，这是一个很撑的段落，
+            落，这是一个很撑的段落，落，这是一个很撑的段落，落，这是一个很撑的段落，落，这是一个很撑的段落，
+            落，这是一个很撑的段落，<br/>落，这是一个很撑的段落，落，这是一个很撑的段落,落，这是一个很撑的段落，
+            落，这是一个很撑的段落，<a href="http://ife.baidu.com" target="_blank">这里是一个链接点击后打开新窗口链接到http://ife.baidu.com</a>
+            这是一个很撑的段落，这是一个很撑的段落，这是一个很撑的段落，这是一个很撑的段落，这是一个很撑的段落。</p>
+          </div>
+          <div class="article1">
+              <h1>另一篇文章一级标题</h1>
+                <h2>文章二级标题</h2>
+                <h6>文章作者 文章发表时间</h6>
+                <p>这是一个很撑的段落，这是一个很撑的段落，落，这是一个很撑的段落，落，这是一个很撑的段落，
+                落，这是一个很撑的段落，落，这是一个很撑的段落，落，这是一个很撑的段落，落，这是一个很撑的段落，
+                落，这是一个很撑的段落，<br/>落，这是一个很撑的段落，落，这是一个很撑的段落,落，这是一个很撑的段落，
+                落，这是一个很撑的段落，<a href="http://ife.baidu.com">这里是一个链接链接到http://ife.baidu.com</a>
+                这是一个很撑的段落，这是一个很撑的段落，这是一个很撑的段落，这是一个很撑的段落，这是一个很撑的段落。</p>
+                <img src="book1.jpg" alt="book1" />
+                <ul>
+                	<li>列表项目一</li>
+                    <li>列表项目一</li>
+                    <li>列表项目一</li>
+                </ul>
+          </div>
+         <div class="article1">
+         	<h2>图片</h2>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+            <div class="picture">
+            	<p>好看的图片</p>
+                <img src="book1.jpg" width="80" height="80"  />
+            </div>
+         </div>
+         <div class="article1">
+         	<h1>最后一篇文章一级标题</h1>
+            <h2>文章二级标题</h2>
+            <h6>文章作者 文章发表时间</h6>
+            <ol>
+            	<li>排名1</li>
+                <li>排名2</li>
+                <li>排名3</li>
+            </ol>
+            <table width="100%">
+            	<thead bgcolor="#333" >
+                	<tr style="color:white">
+                    	<td>表头</td>
+                        <td>表头</td>
+                        <td>表头</td>
+                    </tr>
+                </thead>
+                <tbody bgcolor="#FFF" >
+                	<tr>
+                    	<td>表内容单元格</td>
+                        <td>表内容单元格</td>
+                        <td><a href="#">操作</a></td>
+                    </tr>
+                    <tr>
+                    	<td>表内容单元格</td>
+                        <td>表内容单元格</td>
+                        <td><a href="#">操作</a></td>
+                    </tr>
+                    <tr>
+                    	<td>表内容单元格</td>
+                        <td>表内容单元格</td>
+                        <td><a href="#">操作</a></td>
+                    </tr>
+                    <tr>
+                    	<td>表内容单元格</td>
+                        <td>表内容单元格</td>
+                        <td><a href="#">操作</a></td>
+                    </tr>
+                </tbody>
+                <tfoot bgcolor="#CCC">
+                	 <tr style="font-weight:bold">
+                    	<td>总计</td>
+                        <td colspan="2">1000</td>        
+                    </tr>
+                </tfoot>
+            </table>
+         </div>
+    </div>
+</div>
+<div class="footer">
+	<p>版权所有&Theta;</p>
+</div>
+</body>
+</html>
