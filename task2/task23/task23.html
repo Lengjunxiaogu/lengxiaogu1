@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task23</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		div{background: #fff;font-size:12px;border:1px solid #999;display:flex;}
+		#Super{width:1070px;height: 200px;justify-content:space-around;}
+		.child_4{padding:10px 10px;margin:20px 5px 20px 0;}
+		.child_3{padding:10px 5px 0 5px;margin:20px 5px 20px 5px;}
+		.child_2{margin:20px 5px 20px 0;padding:0 10px;}
+		.child_1{margin:20px 5px 20px 0;}
+		#btn_div{border:none;margin-top:20px;margin-left: 50px;width:800px;}
+		#btn_div input{margin-right: 20px;}
+	</style>
+</head>
+<body>
+	<div id="Super">Super
+		<div class="child_1">Caf
+			<div class="child_2">Apple
+				<div class="child_3">Peor</div>
+				<div class="child_3">Pig</div>
+				<div class="child_3">Cala</div>
+				<div class="child_3">Soccer</div>
+			</div>
+			<div class="child_2">Phone</div>
+			<div class="child_2">
+				<div class="child_3">Book</div>
+				<div class="child_3">School</div>
+			</div>
+		</div>
+		<div class="child_1">Note
+			<div class="child_2">Human
+				<div class="child_3">Code</div>
+				<div class="child_3">Oporate</div>
+				<div class="child_3">Man</div>
+
+			</div>
+			<div class="child_2">Progrom
+				<div class="child_3">Bement
+					<div class="child_4">Cat</div>
+				</div>
+				<div class="child_2">Gass</div>
+			</div>
+		</div>
+		<div class="child_1" style="padding:0 30px;">Fish</div>
+	</div>
+
+	<div id="btn_div">
+		<input type="button" value="深度优先搜索" onclick = "travesel('depth');" />
+		<input type="button" value="广度优先搜索" onclick = "travesel('breadth');" />
+		输入查询文字后点击搜索按钮进行查找：<input id="btn_text" type="text" />
+		
+	</div>
+	<script src="task23.js"></script>
+</body>
+</html>
