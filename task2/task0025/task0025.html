@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务25</title>
+	<style type="text/css">
+		#wrap{width:500px;box-shadow: 10px 10px 5px #888;float: left;}
+		#wrap li{list-style: none;background-color:#fff;}
+		.on{background:url(task25_1.jpg) left top no-repeat;}
+		.off{background:url(task25_2.jpg) left top no-repeat;}
+		#wrap li p{margin-left:50px;line-height:30px;}
+		#btn_box{float:right;width:100px;margin-top: 300px;margin-right:200px;}
+		#btn_box input{margin:5px;width:200px;height: 30px;text-align: center;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<ul>
+			<li class="on"><p>百度</p>
+					<ul>
+
+					<li class="on"><p>移动服务事业群</p>
+						<ul>
+							<li class="on"><p>贴吧</p>
+								<ul>
+									<li class="on"><p>贴吧API</p></li>
+								</ul>
+							</li>
+							<li class="on"><p>移动云</p>
+								<ul>
+									<li class="on"><p>移动云API</p></li>
+								</ul>
+							</li>
+							<li class="on"><p>LBS</p>
+								<ul>
+									<li class="on"><p>LBS开发</p></li>
+									<li class="on"><p>运维</p></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="on"><p>搜索事业群</p>
+						<ul>
+							<li class="on"><p>百度糯米</p>
+								<ul>
+									<li class="on"><p>糯米平台</p></li>
+									<li class="on"><p>移动接口</p></li>
+									<li class="on"><p>推广宣传</p></li>
+								</ul>
+							</li>
+							<li class="on"><p>搜索事业群</p>
+								<ul>
+									<li class="on"><p>算法支持</p></li>
+									<li class="on"><p>数据统计</p></li>
+									<li class="on"><p>设备管理</p></li>
+								</ul>
+							</li>
+						</ul>
+
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="btn_box">
+		<input type="button" value="点击删除" onclick = "deleteThis();" />
+		<input id="btn_input" class="text" type="text"  />
+		<input type="button" value="点击添加" onclick = "addThis();" />
+		<input type="button" value="查找" onclick = "mySearch();" />
+		
+	</div>
+	<script src="task25.js"></script>
+	
+</body>
+
+</html>
