@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>task0019</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#tab_info{margin: 20px 0 0 20px;}
+		.tex{width:200px;height: 30px;}
+		.btn{width:50px;height:30px;text-align: center;margin-left: 5px;}
+		.btn1{margin-left:30px;}
+		#show_data{width:1000px;height:120px;display:flex;align-items:flex-end;flex-flow:row wrap;}
+	</style>
+	<script src="task19.js" ></script>
+</head>
+<body>
+	<div id="tab_info">
+		<input id="text" class="tex" type="text"  />
+		<input class="btn" type="button" value="左侧入" onclick = "Myinsert(1);" />
+		<input class="btn" type="button" value="右侧入" onclick = "Myinsert(2);" />
+		<input class="btn btn1" type="button" value="左侧出" onclick= "Mypop(1);" />
+		<input class="btn" type="button" value="右侧出" onclick = "Mypop(2);" />
+		<input class="btn btn2" type="button" value="排序" onclick = "Mysort();" />
+	</div>
+	<div id="show_data">
+
+	</div>
+
+</body>
+</html>
