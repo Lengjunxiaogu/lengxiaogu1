@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>task0020</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#tab_info{margin: 20px 0 0 20px;}
+		.tex{width:200px;height: 50px;}
+		.btn{width:50px;height:30px;text-align: center;margin-left: 5px;}
+		.btn1{margin-left:30px;}
+		#ul_info{margin-left: 20px;}
+		#ul_info li{list-style: none;width:40px;height:40px;line-height:40px;background:red; color:#fff;text-align:center;font-size: 14px;float:left;margin-right:5px;}
+	</style>
+	<script src="task20.js" ></script>
+</head>
+<body>
+	<div id="tab_info">
+		<textarea id="text" class="tex"></textarea>
+		<input class="btn" type="button" value="左侧入" onclick = "Myinsert(1);" />
+		<input class="btn" type="button" value="右侧入" onclick = "Myinsert(2);" />
+		<input class="btn btn1" type="button" value="左侧出" onclick= "Mypop(1);" />
+		<input class="btn" type="button" value="右侧出" onclick = "Mypop(2);" />
+		<input class="tex1" id="text1" type="text" /> 
+		<input class="btn" type="button" value="查询" onclick = "MyCheck();">
+	</div>
+	<ul id="ul_info">
+	</ul>
+</body>
+</html>
