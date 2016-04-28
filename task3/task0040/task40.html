@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务四十</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		span{margin:0;padding:0;}
+		.wrap{width:300px;height:500px;margin:200px auto;}
+		#input{width:150px;height:30px;background:url(task40_3.jpg) right center no-repeat;border:none;border:1px solid #CCC;}
+		#cal_div{width:200px;height:200px;padding:10px;border:1px solid rgb(52,133,90); display:none;}
+		#calendar{width:200px;height:200px;border-collapse:collapse;}
+		#calendar td{text-align:center;}
+		.thed tr{height:30px;}
+		.preyear{width:20px;height:30px;background:url(task40_1.jpg) left center no-repeat;display:inline-block;}
+		.premonth{width:20px;height:30px;background:url(task40_2.jpg) left center no-repeat;display:inline-block;}
+		.nextyear{width:18px;height:30px;background:url(task40_1.jpg) left center no-repeat;display:inline-block;-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);transform:rotate(180deg);}
+		.nextmonth{width:18px;height:30px;background:url(task40_2.jpg) left center no-repeat;display:inline-block;-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);transform:rotate(180deg);}
+		#nowdate{width:105px;height:30px;display:inline-block;line-height:30px;font-size:14px;position:relative;top:-10px;}
+		#tbody td{border:1px solid #CCC;}
+		.notLive{color:rgb(186,201,207);}
+		.nowday{background:#CC9B29;color:#fff;}
+		.Live{font-weight:bold;}
+		.disabled{background:#6FA3FF; color:#fff;}
+
+
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<input id="input" type="text" />
+	<div id="cal_div">
+		<table id="calendar">
+			<thead class="thed">
+				<tr>
+					<td colspan="7"><span class="preyear"></span><span class="premonth"></span><span id="nowdate"></span><span class="nextmonth"></span><span class="nextyear"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>日</td>
+					<td>一</td>
+					<td>二</td>
+					<td>三</td>
+					<td>四</td>
+					<td>五</td>
+					<td>六</td>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script src="task40.js"></script>
+</body>
+</html>
