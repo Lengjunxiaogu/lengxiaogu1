@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务29</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#forms{width:400px;height:350px;margin:100px auto;font-weight:bold;font-size:14px;}
+		#forms ul{list-style: none;width:100%;}
+		#forms li{height:60px;margin:10px 0;}
+		#forms li span{display:inline-block;width:80px;text-align:right;padding-right:20px;}
+		#forms li input{width:240px;height:30px;border:none;border:1px solid #999;}
+		#forms li p{padding-left:100px;}
+		#btn{width:50px;height:30px;color:#fff;background-color:blue;border:none;margin-right:60px;float:right;}
+		#forms p{padding-left:50px;margin-top:5px;color:#999;}
+
+	</style>
+</head>
+<body>
+	<div id="forms">
+		<ul>
+			<li>
+				<span>名称</span><input type="text" name="name" />
+				<p></p>
+			</li>
+			<li>
+				<span>密码</span><input id="password" type="password" name="code" />
+				<p></p>
+			</li>
+			<li>
+				<span>确认密码</span><input type="password" name="re_code" />
+				<p></p>
+			</li>
+			<li>
+				<span>邮箱</span><input type="text" name="mail" />
+				<p></p>
+			</li>
+			<li>
+				<span>手机</span><input type="text" name="phone" />
+				<p></p>
+			</li>
+		</ul>
+		<input id="btn" type="button" value="提交" />
+	</div>
+	
+<script src="task30.js"></script>
+	
+</body>
+</html>
