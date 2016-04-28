@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务32</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#producer{
+			width:250px;
+		}
+		#forms{
+			width:800px;
+			margin:30px auto;
+		}
+		#forms ul{list-style:none;}
+		#forms li{height:60px;margin:10px 0;}
+		#forms li input{width:240px;height:30px;border:none;border:1px solid #999;}
+		#forms ul li span{display:inline-block;width:80px;text-align:right;padding-right:20px;}
+		#forms ul li p{color:#999;}
+		.btn{width:50px;height:30px;color:#fff;background-color:blue;border:none;margin-right:460px;float:right;} 
+	</style>
+</head>
+<body>
+	<div id="producer">
+		<p>表单生成器</p>
+		<input type="checkbox" id="forms1" name="formKind" />
+		<label for="forms1">名称</label>
+		<input type="checkbox" id="forms2" name="formKind" />
+		<label for="forms2">密码</label>
+		<input type="checkbox" id="forms3" name="formKind" />
+		<label for="forms3">邮箱</label>
+		<input type="checkbox" id="forms4" name="formKind" />
+		<label for="forms4">手机</label>
+		<input type="radio" id="style1" name="formStyle" />
+		<label for="style1">样式一</label> 
+		<input type="radio" id="style2" name="formStyle" />
+		<label for="style2">样式二</label>
+		<p><input id="btn" type="button" value="生成表单" /></p>
+	</div>
+	<div id="forms">
+		
+	</div>
+	<script src="task32.js"></script>
+	
+</body>
+</html>
