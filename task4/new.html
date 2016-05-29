@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新建问卷调查</title>
+	<link href="index_1.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="title wrap">
+			<span class="manage_question">调查问卷</span>
+			<span class="myquestions"><a href="index_1.html">我的问卷</a></span>
+		</div>		
+	</div>
+	<div class="wrap new_container">
+		<div id="new_title">
+			<label for="title"><input type="text" id="title" value="这是一个标题" /></label>
+
+		</div>
+		<div id="new_body">
+			<div id="content_question">
+			</div>
+			<div class="choose_question">
+				<input id="btn_new_addradio" type="button" value="单选按钮" />
+				<input id="btn_new_addcheckbox" type="button" value="多选按钮" />
+				<input id="btn_new_addtextarea" type="button" value="文本框"  />
+			</div>
+			<input id="btn_add_question" type="button" value="+添加问题">
+		</div>
+		<div  id="new_footer">
+			<label for="new_footer_calendar">问卷截止日期：<input id="new_footer_calendar" type="text" placeholder="请输入日期" /></label>
+			<div id="cal_div">
+				<table id="calendar">
+					<thead class="thed">
+						<tr>
+							<td colspan="7"><span class="preyear"></span><span class="premonth"></span><span id="nowdate"></span><span class="nextmonth"></span><span class="nextyear"></span>
+							</td>
+						</tr>
+						<tr>
+							<td>日</td>
+							<td>一</td>
+							<td>二</td>
+							<td>三</td>
+							<td>四</td>
+							<td>五</td>
+							<td>六</td>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+					</tbody>
+				</table>
+			</div>
+
+			<input id="save_new_question" type="button" value="保存问卷" />
+			<input id="publish_new_question" type="button" value="发表问卷">
+
+		</div>
+	</div>
+<script src="data.js"></script>
+<script src="new_question.js"></script>
+<script src="task40.js"></script>
+
+</body>
+</html>

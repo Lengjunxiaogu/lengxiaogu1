@@ -1,0 +1,87 @@
+*{margin:0;padding:0;}
+body{background:#f2f2f2;}
+
+/*以下是index.html的css样式设置*/
+
+.header{width:100%;height:50px;background:#EE7419;}
+.header a{text-decoration:none;color:#fff;}
+.wrap{width:900px;height:100%;margin:0 auto;}
+.manage_question{height:100%;padding-left:25px;line-height:50px;font-size:22px;font-weight:bold;
+	color:#fff;background:url(index_1_01.jpg) left center no-repeat;}
+.myquestions{padding-left:30px;color:#fff;line-height:50px;}
+.mainbody{margin-top:30px;padding:20px;height:100%;}
+#table_questionnaire{width:100%;color:#797979;font-size:14px;border-collapse:collapse;}
+#table_questionnaire tr{width:100%;height:60px;}
+#table_questionnaire tbody tr{background:#fff; border-top:1px solid #ccc;}
+#table_questionnaire tbody tr:hover{background:#FCF0E5;}
+#btn_newquestionnaire{width:83px;height:35px;color:#fff;border:none;border-radius:5px;background:#F0AD4E;}
+.btn_edit, .btn_delete{width:56px;height:35px;border:none;border-radius:5px;margin-right:10px;} 
+.btn_checked{width:83px;height:35px;border-radius:5px;border:none;border-radius:5px;}
+.checked_before{border:1px solid #ccc;color:#DBDDE6;background-color:#fff;}
+.select_All{width:100%;height:50px;background-color:#fff;line-height:50px;color:#797979;font-size:14px;}
+.check_All{margin-left:30px;}
+#choose_All{width:135px;height:35px;border-radius:5px;margin-left:10px;border:none;border:1px solid #ccc;}
+.checked_after{background:#F0AD4E;color:#000;}
+
+
+/*以下是new.html的样式设置*/
+.new_container{width:900px;margin:80px auto;background-color:#fff;padding:10px;}
+#new_title{width:100%;height:50px;padding:20px 0;border-bottom:2px solid #ccc;}
+#new_title:hover{background:#FBEFE4;}
+#new_title input{width:100%;border:none;height:100%;font-size:16px;text-align:center;background:inherit;}
+#new_body{width:100%;height:100%;border-bottom:2px solid #ccc;padding:30px 0 30px 0;}
+#content_question{width:100%;}
+.choose_question{width:100%;height:50px;display:flex;margin:10px 0 5px 0;flex-wrap:row wrap;justify-content:center;display:none;}
+.choose_question input{display:block;width:100px;height:40px;background-color:#DEDEDE;border:none;margin:5px;}
+#btn_add_question{width:100%;height:50px;border:none;background-color:#DEDEDE;}
+#new_footer{width:100%;height:55px;padding-top:30px;}
+#new_footer label{margin:0 200px 0 80px;}
+#new_footer_calendar{width:200px;height:25px;}
+#save_new_question,#publish_new_question{width:80px;height:35px;margin-left:10px;}
+.ansers{width:90%;height:180px;margin:10px;padding:10px;}
+.ansers:hover{background:#FBEFE4;}
+.ansers_header{height:30px;line-height:30px;}
+.ansers_header span, .ansers_actions span{padding-right:15px;font-size:16px;}
+.ansers ul li{list-style-type:none;height:30px;line-height:30px;}
+.ansers input{border:none;font-size:16px;margin-right:20px;background:inherit;}
+.radio{width:14px;height:14px;margin-left:30px;}
+.right{float:right;}
+.anser_actions{font-size:14px;}
+
+
+/*以下是日历的样式设置*/
+
+#cal_div{width:200px;height:200px;padding:10px;border:1px solid rgb(52,133,90); display:none;position:absolute;left:35%;}
+#calendar{width:200px;height:200px;border-collapse:collapse;}
+#calendar td{text-align:center;}
+.thed tr{height:30px;}
+.preyear{width:20px;height:30px;background:url(task40_1.jpg) left center no-repeat;display:inline-block;}
+.premonth{width:20px;height:30px;background:url(task40_2.jpg) left center no-repeat;display:inline-block;}
+.nextyear{width:18px;height:30px;background:url(task40_1.jpg) left center no-repeat;display:inline-block;-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);transform:rotate(180deg);}
+.nextmonth{width:18px;height:30px;background:url(task40_2.jpg) left center no-repeat;display:inline-block;-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);transform:rotate(180deg);}
+#nowdate{width:105px;height:30px;display:inline-block;line-height:30px;font-size:14px;position:relative;top:-10px;}
+#tbody td{border:1px solid #CCC;}
+.notLive{color:rgb(186,201,207);}
+.nowday{background:#CC9B29;color:#fff;}
+.Live{font-weight:bold;}
+.disabled{background:#6FA3FF; color:#fff;}
+
+
+
+/*view.html页面的css设置*/
+.left{float:left;}
+.right{float:right;}
+.view_mainbody{width:900px;margin:80px auto;background-color:#fff;padding:20px;}
+.view_header{width:100%;height:94px;border-bottom:1px solid #AEAEAE;font-size:14px;margin-bottom:10px;}
+#view_return a{text-decoration:none;color:#9B9B9B;background:url(task40_3.jpg) left center no-repeat;padding-left:30px;}
+.view_header div{margin:0 auto;width:200px;text-align:center;}
+.view_header .word{color:#9B9B9B;line-height:20px;}
+.view_content{width:100%;border-bottom:1px solid #AEAEAE;font-size:14px;color:#585858;}
+.view_questions{width:820px;height:140px;margin:10px auto;border:1px solid #AEAEAE;padding:10px 10px 0 10px;}
+.view_ansers{width:450px;}
+.view_ansers ul li{list-style:none;height:14px;line-height:24px;padding:5px 0 5px 30px;}
+.view_order{font-size:16px;padding-right:15px;}
+.figure{width:350px;}
+.figure ul li{list-style:none;height:14px;line-height:24px;padding:5px 0;}
+.figure ul li div{width:200px;height:10px;border:1px solid #ccc;float:left;vertical-align:middle;}
+.figure ul li span{padding-left:10px;display:block;float:left;line-height:16px;}
