@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>海报画廊</title>
+	<style type="text/css">
+		*{padding:0;margin:0;}
+		body{color:#555;
+			 background-color: #fff;
+			 font-size:14px;
+			 font-family:'Avenir Next','Lantinghei SC';
+			 /*这是针对chrome中的文字设置，抗文字锯齿，使文字看起来更清晰*/
+			 -webkit-font-smoothing:antialiased;}
+		.wrap{width:100%;height:600px;position:absolute;top:50%;margin-top:-300px;background-color:#333;overflow:hidden;perspective:800px;-webkit-perspective:800px;}
+		/*box-sizing设置可以防止盒子里的内容和padding超过预设的边界*/
+		.photo{width:260px;height:320px;position:absolute;top:50%;left:50%;margin:-160px 0 0 -130px;box-sizing:border-box;z-index:1;box-shadow:rgba(0,0,1px,.01);transition:all 0.6s;-webkit-transition:all 0.6s;}
+		.photo .side{width:100%;height:100%;padding:20px;background-color:#eee;position:absolute;left:0;top:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-sizing:border-box;}/*设置当元素不面向屏幕时，将其隐藏起来*/
+		.photo .side_front .image{width:100%;height:250px;overflow:hidden;line-height:250px;}
+		.photo .side_front .image img{width:100%;height:100%;vertical-align:middle;}
+		.photo .side_front .caption{text-align:center;font-size:16px;line-height:50px;}
+		.photo .side_back .desc{color:666;font-size:14px;line-height:1.5em;}
+		.photo_center{left:50%;top:50%;margin:-160px 0 0 -130px;z-index:999;}
+
+		.photo_wrap{width:100%;height:100%;position:absolute; transform-style:preserve-3d;-webkit-transform-style:preserve-3d; transition:all 0.6s;-webkit-transition:all 0.6s;}/*支持子元素的3d效果*/
+		.photo_wrap .side_front{transform:rotateY(0deg);-webkit-transform:rotateY(0deg);}
+		.photo_wrap .side_back{transform:rotateY(180deg);-webkit-transform:rotateY(180deg);}
+		/*设置photo框的正反面，即控制该div的旋转*/
+		.photo_front .photo_wrap{transform:rotateY(0deg);-webkit-transform:rotateY(0deg);}
+		.photo_back .photo_wrap{transform:rotateY(180deg);-webkit-transform:rotateY(180deg);}
+
+		/*添加nav的样式*/
+		.nav{width:80%;height:30px;position:absolute;left:10%;text-align:center;bottom:20px;z-index:999;background-color:#fff;}
+		.nav .i{width:30px;height:30px;display:inline-block;border-radius:50%;cursor:pointer;background-color:#aaa;transform:scale(.48);-webkit-transform:scale(.48);}
+		.nav .i:after{content:'口';color:#fff;line-height:30px;opacity:0;}
+		.nav .i_current{transform:scale(1);-webkit-transform:scale(1);}
+		.nav .i_current:after{opacity:1;}
+
+		/*优化样式*/
+		.photo_wrap{transform-origin:0% 50%; -webkit-transform-origin:0% 50%;}
+		.photo_front .photo_wrap{transform: translate(0px,0px) rotateY(0deg); -webkit-transform:translate(0px,0px) rotateY(0deg);}
+		.photo_back .photo_wrap{transform: translate(260px,0px) rotateY(180deg); -webkit-transform:translate(260px,0px) rotateY(180deg);}
+
+
+	</style>
+</head>
+<!-- 该设置可防止页面中的文字被选中!-->
+<body onselectstart="return false;">
+	<div class="wrap">
+		<div class="photo photo_front" id="photo_{{index}}" onclick = "turn(this)" >
+		<!-- photo_wrap负责3d翻转，而 photo是负责旋转和平移!-->
+			<div class="photo_wrap">
+				<div class="side side_front">
+					<p class="image"><img src="photo/{{img}}" /></p>
+					<p class="caption">{{caption}}</p>
+				</div>
+				<div class="side side_back">
+					<div class="desc">{{desc}}</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+<script src="data.js"></script>
+<script type="text/javascript">
+	//加载所有图片
+	function g(selector){
+		var method=selector.substr(0,1) == '.' ? "getElementsByClassName" : "getElementById";
+		return document[method](selector.substr(1));
+	}
+	var data=data;
+	console.log(data);
+	addphoto_All(".wrap");
+	function addphoto_All(selector){
+		var method=selector.substr(0,1) == '.' ? "getElementsByClassName" : "getElementById";
+		var template=g(selector)[0].innerHTML;
+		console.log(template);
+		var html=[];
+		var nav=[];
+		for(s in data){
+			var _html = template
+      						.replace('{{index}}',s)
+      						.replace('{{img}}',data[s].img)
+      						.replace('{{caption}}',data[s].caption)
+      						.replace('{{desc}}',data[s].desc);
+      		console.log(_html);
+      		html.push(_html);
+      		var nav_i='<span id="nav_'+s+'" class="i" onclick = "turn(g(\'#photo_'+s+'\')) " ></span>'
+      		nav.push(nav_i);     		
+		}
+		g(selector)[0].innerHTML=html.join('');
+		g(selector)[0].innerHTML += '<div class="nav">'+nav.join('')+'</div>'
+
+		chose_center(random([0,data.length]));
+
+
+	}
+
+	//设置图片的位置范围
+	function range(){
+		var range={left:{x: [], y: []}, right:{ x:[], y:[]}};
+		var wrap={};
+		wrap.w=g(".wrap")[0].clientWidth;
+		wrap.h=g(".wrap")[0].clientHeight;
+		var photo={
+			w: g(".photo")[0].clientWidth,
+			h: g(".photo")[0].clientHeight,
+		};
+		range.left.x=[0 - photo.w, wrap.w/2 - photo.w/2];
+		range.left.y=[0 - photo.h, wrap.h];
+		range.right.x=[wrap.w/2 + photo.w/2, wrap.w + photo.w];
+		range.right.y=range.left.y;
+		return range;
+	}
+
+	//控制照片的翻转                                           
+	function turn(elem){
+
+		//判断当前的图是否为photo_center,若是则对其翻转操作，若不是将其设置为photo_center
+		var str=elem.className;
+		if(!/photo_center/.test(str)){
+			var num=elem.id.split('_')[1];
+			//alert(parseInt(num));
+			chose_center(parseInt(num));
+		}
+		//使用正则表达式来判断当前photo元素的class的状态
+		str=elem.className;
+		if(/photo_front/.test(str)){
+			str=str.replace(/photo_front/,"photo_back");
+		}else{
+			str=str.replace(/photo_back/,"photo_front");
+		}
+		elem.className=str;
+	}
+
+	//随机选择一张照片放在中间
+	function chose_center(n){
+		//首先对所有的photo节点清除photo_center样式
+		var ranges=range();
+		var photos=g(".photo");
+		var _photos=[];
+		console.log(ranges);
+		for(var i=0;i<photos.length;i++){
+			//alert(photos[s].className);
+			photos[i].className = photos[i].className.replace(/\s*photo_center\s*/,'');
+			photos[i].className = photos[i].className.replace(/\s*photo_front\s*/,'');
+			photos[i].className = photos[i].className.replace(/\s*photo_back\s*/,'');
+			photos[i].className += " photo_front";
+			photos[i].style.top='';
+			photos[i].style.left='';
+			photos[i].style['transform'] = 'rotate(0deg) scale(1.3)';
+			photos[i].style['-webkit-transform'] = 'rotate(0deg) scale(1.3)';
+
+			_photos.push(photos[i]);
+
+		}
+
+		g("#photo_"+n).className += " photo_center";
+		g("#photo_"+n).className=g("#photo_"+n).className.replace(/photo_front/,"photo_back");
+
+		//关联前将滚动条的所有current样式清空
+		var navs=g(".i");
+		for(var i=0;i<navs.length;i++){
+			navs[i].className = navs[i].className.replace(/\s*i_current\s*/,'');
+		}
+		//关联相应的滚动条
+		g("#nav_"+n).className += " i_current";
+
+		//现在是布局左右两侧的图片
+		_photos.splice(n,1);
+		var left_photos=_photos.splice(0,Math.ceil(_photos.length/2));
+		var right_photos=_photos;
+		//console.log(left_photos);
+		//console.log(right_photos);
+
+		//分别对左右两侧图的每张图进行随机的设置其位置
+		for(var s=0;s<left_photos.length;s++){
+
+			left_photos[s].style.left=random(ranges.left.x) + 'px';
+			left_photos[s].style.top=random(ranges.left.y) + 'px';
+			left_photos[s].style['transform'] = 'rotate('+random([-150,150])+') scale(1)';
+			left_photos[s].style['-webkit-transform'] = 'rotate('+random([-150,150])+'deg)';
+		}
+
+		for(var s=0;s<right_photos.length;s++){
+			right_photos[s].style.left=random(ranges.right.x) + 'px';
+			right_photos[s].style.top=random(ranges.right.y) + 'px';
+			right_photos[s].style['transform'] = 'rotate('+random([-150,150])+')';
+			right_photos[s].style['-webkit-transform'] = 'rotate('+random([-150,150])+'deg) scale(1)';
+		}
+	}
+
+	//随机选择函数
+	function random([a,b]){
+		var min=Math.min(a,b);
+		var max=Math.max(a,b);
+
+		var num=Math.ceil(Math.random()*(max-min)+min);
+		return num;
+	}
+
+</script>
+</body>
+</html>
